@@ -1,0 +1,283 @@
+/* --- 自前フォント（しねきゃぷしょん）の定義 --- */
+@font-face {
+  font-family: 'Cinecaption';
+  src: url('cinecaption226.ttf') format('truetype');
+}
+:root {
+  --bg-color: #0d0d0d;      /* 漆黒に近い背景色 */
+  --card-bg: #181818;       /* カードの背景色 */
+  --card-border: #2a2a2a;   /* 枠線 */
+  --text-main: #f0f0f0;     /* メイン文字色（白） */
+  --text-sub: #f5f5f5;      /* サブ文字色（グレー） */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  /* 背景画像をしっかり有効化 */
+  background-image: url("bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: 'Cinecaption', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+/* --- ヘッダー --- */
+.header {
+  margin-bottom: 40px;
+}
+
+.circle-name {
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center; /* 画像を中央配置 */
+  align-items: center;
+}
+
+/* ヘッダー画像 (icon.png) の表示サイズ調整 */
+.header-logo-img {
+  width: 100%;
+  max-width: 280px; /* 画像の大きさに合わせて 200px 〜 300px あたりで調整してみてください */
+  height: auto;     /* 縦横比を維持 */
+  display: block;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+/* ロゴと文字を中央寄せで横並びにする */
+.circle-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* 画像と文字の間のすき間 */
+}
+
+/* 左側のロゴ画像サイズ調整 */
+.circle-logo {
+  width: 40px;  /* 画像の横幅（お好みで調整してください） */
+  height: 40px; /* 画像の縦幅 */
+  object-fit: contain;
+}
+
+/* 「山紫堂源」の文字：深緑色 ＋ 白フチ */
+.circle-name span {
+  color: #0d4d2d; /* 深緑色（シックで落ち着いた緑） */
+  
+  /* 上下左右・斜めに小さな白い影を重ねて白フチを作る設定 */
+  text-shadow:
+    2px  2px 0 #ffffff,
+   -2px  2px 0 #ffffff,
+    2px -2px 0 #ffffff,
+   -2px -2px 0 #ffffff,
+    2px  0px 0 #ffffff,
+   -2px  0px 0 #ffffff,
+    0px  2px 0 #ffffff,
+    0px -2px 0 #ffffff;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.circle-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+/* --- リンク集 --- */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.link-card {
+  display: block;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.link-card:hover {
+  border-color: var(--text-main);
+  transform: translateY(-2px);
+  background-color: #222222;
+}
+
+.link-title {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.link-sub {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  margin-top: 4px;
+  display: block;
+  line-height: 1.4;
+}
+
+/* --- ABOUT・NEWSページ共通スタイル --- */
+.about-content,
+.news-page-content {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.about-section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.about-section h2 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.about-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 8px;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* NEWS一覧 */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.news-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  font-family: monospace;
+  margin-bottom: 6px;
+}
+
+.news-item-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 6px;
+}
+
+.news-item-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* 戻るボタン */
+.back-button {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: 1px solid var(--card-border);
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  border-color: var(--text-main);
+  background-color: #222222;
+}
+
+/* --- フッター --- */
+.footer {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+/* 一番下の連絡先テキストをくっきり「白」に設定 */
+.contact-info {
+  font-size: 0.78rem;
+  color: #ffffff;             /* 真っ白 */
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: #ffffff;             /* メールアドレスも真っ白 */
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: #cccccc;
+}
+
+/* コピーライト */
+.footer p:last-child {
+  color: var(--text-sub);
+}
